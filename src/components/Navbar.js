@@ -5,10 +5,10 @@ const Navbar = () => {
 		<nav>
 			<h2>foozies</h2>
 			<ul>
-				<li>
-					<i className="material-icons">search</i>
+				<li className="icon">
+					<i className="material-icons bold">search</i>
 				</li>
-				<li>
+				<li className="icon">
 					<i className="material-icons">shopping_bag</i>
 				</li>
 			</ul>
