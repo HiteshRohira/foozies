@@ -1,61 +1,60 @@
 import React from "react";
-import ProductElement from "./ProductElement";
 
-const ProductGrid = () => {
+const ProductGrid = ({ setSelectedImage }) => {
 	const images = [
 		{
 			id: 1,
-			name: "red-and-black-hoodie",
+			name: "Red and Black Hoodie",
 			url: "./images/hoodies/red-and-black-hoodie.jpg",
 		},
 		{
 			id: 2,
-			name: "white-hoodie",
+			name: "White Hoodie",
 			url: "./images/hoodies/white-hoodie.jpg",
 		},
 		{
 			id: 3,
-			name: "black-jacket",
+			name: "Black Jacket",
 			url: "./images/jackets/black-jacket.jpg",
 		},
 		{
 			id: 4,
-			name: "black-jacket-with-shirt",
+			name: "Black Jacket with Shirt",
 			url: "./images/jackets/black-jacket-with-shirt.jpg",
 		},
 		{
 			id: 5,
-			name: "dark-blue-check-shirt",
+			name: "Dark Blue Check Shirt",
 			url: "./images/shirts/dark-blue-check-shirt.jpg",
 		},
 		{
 			id: 6,
-			name: "light-blue-check-shirt",
+			name: "Light Blue Check Shirt",
 			url: "./images/shirts/light-blue-check-shirt.jpg",
 		},
 		{
 			id: 7,
-			name: "red-check-shirt",
+			name: "Red Check Shirt",
 			url: "./images/shirts/red-check-shirt.jpg",
 		},
 		{
 			id: 8,
-			name: "blue-shoes",
+			name: "Blue Shoes",
 			url: "./images/shoes/blue-shoes.jpg",
 		},
 		{
 			id: 9,
-			name: "green-shoes",
+			name: "Green Shoes",
 			url: "./images/shoes/green-shoes.jpg",
 		},
 		{
 			id: 10,
-			name: "white-shoes",
+			name: "White Shoes",
 			url: "./images/shoes/white-shoes.jpg",
 		},
 		{
 			id: 11,
-			name: "yellow-shoes",
+			name: "Yellow Shoes",
 			url: "./images/shoes/yellow-shoes.jpg",
 		},
 	];
@@ -63,7 +62,12 @@ const ProductGrid = () => {
 	return (
 		<div className="product-grid">
 			{images.map((image) => (
-				<ProductElement image={image} key={image.id} />
+				<div
+					className="product-element"
+					key={image.id}
+					onClick={() => setSelectedImage(image)}>
+					<img src={image.url} alt={image.name} />
+				</div>
 			))}
 		</div>
 	);
