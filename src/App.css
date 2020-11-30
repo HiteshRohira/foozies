@@ -11,11 +11,16 @@ body {
 	background-color: var(--primary);
 }
 
+.App {
+	max-width: 90%;
+	margin: auto;
+}
+
 nav {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
-	margin: 20px 40px;
+	margin: 20px 80px;
 }
 
 nav h2 {
@@ -51,7 +56,7 @@ nav ul {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	margin: 35px 55px;
-	row-gap: 75px;
+	row-gap: 55px;
 	justify-items: center;
 	align-items: center;
 }
@@ -73,23 +78,63 @@ img {
 
 .backdrop .product-modal {
 	background: var(--primary);
-	max-width: 14em;
+	max-width: 15em;
 	margin: 60px auto;
 	border-radius: 12px;
-	height: 80%;
+	height: 80vh;
 }
 
-.backdrop img {
+.backdrop .product-modal img {
 	display: block;
 	max-width: 100%;
-	max-height: 80%;
-	margin: 0 auto;
+	max-height: 40%;
+	margin: auto;
 	border-radius: 12px;
 }
 
-.backdrop h2 {
+.backdrop .product-modal h2 {
 	text-align: center;
 	background-color: var(--primary);
 	max-width: 15em;
 	margin: 40px auto;
+	font-weight: 800;
+}
+
+.backdrop .product-modal p {
+	font-size: 32px;
+	margin-top: 20px;
+	text-align: center;
+	font-weight: 700;
+	color: var(--secondary);
+}
+
+.backdrop .product-modal button {
+	margin: 25px 25px;
+	text-align: center;
+	width: 80%;
+	height: 10%;
+	font-size: 28px;
+	font-weight: 700;
+	border: 2px solid var(--secondary);
+	border-radius: 12px;
+	background-color: var(--secondary);
+	color: var(--primary);
+}
+
+@media screen and (max-width: 1175px) {
+	.App {
+		max-width: 100%;
+	}
+	.product-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.App {
+		max-width: 100%;
+	}
+	.product-grid {
+		grid-template-columns: 1fr;
+	}
 }

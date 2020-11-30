@@ -7,7 +7,7 @@ const Modal = ({ selectedImage, setSelectedImage }) => {
 		}
 	};
 
-	const { id, name, url } = selectedImage;
+	const { id, name, price, url } = selectedImage;
 	console.log(id);
 
 	return (
@@ -15,6 +15,8 @@ const Modal = ({ selectedImage, setSelectedImage }) => {
 			<div className="product-modal">
 				<img src={url} alt={name} />
 				<h2>{name}</h2>
+				<p>₹ {price}.00</p>
+				<button>Add to cart</button>
 			</div>
 		</div>
 	);
