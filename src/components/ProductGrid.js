@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const ProductGrid = ({ setSelectedImage }) => {
 	const images = [
@@ -77,7 +78,13 @@ const ProductGrid = ({ setSelectedImage }) => {
 					className="product-element"
 					key={image.id}
 					onClick={() => setSelectedImage(image)}>
-					<img src={image.url} alt={image.name} />
+					<motion.img
+						src={image.url}
+						alt={image.name}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.3 }}
+					/>
 				</div>
 			))}
 		</div>

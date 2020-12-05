@@ -3,6 +3,13 @@
 	--secondary: #2681f8;
 }
 
+/*---Remove the default black border in chrome---*/
+*,
+*:focus,
+*:hover {
+	outline: none;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -50,6 +57,7 @@ nav ul {
 
 .material-icons {
 	font-size: 22px;
+	color: var(--primary);
 }
 
 .product-grid {
@@ -78,18 +86,18 @@ img {
 
 .backdrop .product-modal {
 	background: var(--primary);
-	max-width: 15em;
-	margin: 60px auto;
-	border-radius: 12px;
-	height: 80vh;
+	max-width: 15.04em;
+	margin: 10% auto;
+	border-radius: 8px;
+	height: 70vh;
 }
 
 .backdrop .product-modal img {
 	display: block;
 	max-width: 100%;
-	max-height: 40%;
+	max-height: 50%;
 	margin: auto;
-	border-radius: 12px;
+	border-radius: 8px;
 }
 
 .backdrop .product-modal h2 {
@@ -109,14 +117,14 @@ img {
 }
 
 .backdrop .product-modal button {
-	margin: 25px 25px;
+	margin: 25px 31px;
 	text-align: center;
-	width: 80%;
+	width: 75%;
 	height: 10%;
 	font-size: 28px;
 	font-weight: 700;
 	border: 2px solid var(--secondary);
-	border-radius: 12px;
+	border-radius: 8px;
 	background-color: var(--secondary);
 	color: var(--primary);
 }
@@ -137,4 +145,22 @@ img {
 	.product-grid {
 		grid-template-columns: 1fr;
 	}
+}
+
+/*-----Cart Page CSS-----*/
+#cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#cart #cart-img {
+	width: 50%;
+	height: auto;
+	margin-top: 30px;
+}
+
+#cart h2 {
+	margin: 50px auto;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Modal = ({ selectedImage, setSelectedImage }) => {
 	const handleClick = (e) => {
@@ -11,14 +12,24 @@ const Modal = ({ selectedImage, setSelectedImage }) => {
 	console.log(id);
 
 	return (
-		<div className="backdrop" onClick={handleClick}>
-			<div className="product-modal">
+		<motion.div
+			className="backdrop"
+			onClick={handleClick}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}>
+			<motion.div
+				className="product-modal"
+				initial={{ y: "25vh" }}
+				animate={{ y: 0 }}
+				transition={{ delay: 0.1 }}>
 				<img src={url} alt={name} />
 				<h2>{name}</h2>
 				<p>₹ {price}.00</p>
-				<button>Add to cart</button>
-			</div>
-		</div>
+				<motion.button whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.95 }}>
+					Add to cart
+				</motion.button>
+			</motion.div>
+		</motion.div>
 	);
 };
 
